@@ -34,7 +34,10 @@ async function obterToken() {
     grant_type: 'client_credentials',
   });
   const r = await fetch(url, { method: 'POST', body: corpo });
-  if (!r.ok) throw new Error(`token ${r.status}`);
+  if (!r.ok) {
+    const det = await r.json().catch(() => ({}));
+    throw new Error(`token ${r.status} ${det.error || ''}`.trim());
+  }
   const j = await r.json();
   tokenCache = { valor: j.access_token, expira: Date.now() + j.expires_in * 1000 };
   return j.access_token;
@@ -52,11 +55,17 @@ app.http('contato', {
   authLevel: 'anonymous',
   route: 'contato',
   handler: async (req, ctx) => {
-    const resp = (status, ok) => ({ status, jsonBody: { ok } });
+    const resp = (status, ok, erro) => ({ status, jsonBody: erro ? { ok, erro } : { ok } });
+
+    const faltando = ['GRAPH_TENANT_ID', 'GRAPH_CLIENT_ID', 'GRAPH_CLIENT_SECRET', 'MAIL_FROM'].filter((v) => !process.env[v]);
+    if (faltando.length) {
+      ctx.error('Variáveis de ambiente faltando:', faltando.join(', '));
+      return resp(500, false, 'config: faltam ' + faltando.join(', '));
+    }
 
     const origem = req.headers.get('origin');
     const permitidas = (process.env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
-    if (permitidas.length && origem && !permitidas.includes(origem)) return resp(403, false);
+    if (permitidas.length && origem && !permitidas.includes(origem)) return resp(403, false, 'origem não permitida: ' + origem);
 
     const ip = (req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'desconhecido';
     if (excedeuLimite(ip)) return resp(429, false);
@@ -101,11 +110,14 @@ app.http('contato', {
           saveToSentItems: false,
         }),
       });
-      if (r.status !== 202) throw new Error(`sendMail ${r.status}`);
+      if (r.status !== 202) {
+        const det = await r.json().catch(() => ({}));
+        throw new Error(`sendMail ${r.status} ${(det.error && det.error.code) || ''}`.trim());
+      }
       return resp(200, true);
     } catch (err) {
       ctx.error('Falha ao enviar contato:', err.message);
-      return resp(502, false);
+      return resp(502, false, err.message);
     }
   },
 });

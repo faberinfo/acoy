@@ -61,7 +61,12 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
     }).then(function (r) {
-      if (!r.ok) throw new Error('status ' + r.status);
+      if (!r.ok) {
+        return r.text().then(function (t) {
+          if (window.console) console.warn('Formulário /api/contato:', r.status, t.slice(0, 300));
+          throw new Error('status ' + r.status);
+        });
+      }
       form.reset();
       avisar('Mensagem enviada. Em breve alguém da Acoy fala com você.', 'ok');
     }).catch(function () {
