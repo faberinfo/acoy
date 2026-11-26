@@ -1,48 +1,300 @@
-<!-- Deploy -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ACOY - Nova experiência em breve</title>
-  <link rel="shortcut icon" href="favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acoy | Seguro garantia em minutos</title>
+  <meta name="description" content="A Acoy é uma plataforma digital de seguro garantia. Cote em mais de 25 seguradoras, emita em até 2 minutos e controle todas as suas apólices em um só lugar.">
+  <meta property="og:title" content="Acoy | Seguro garantia em minutos">
+  <meta property="og:description" content="Cote em mais de 25 seguradoras, emita em até 2 minutos e controle todas as suas apólices em um só lugar.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#193B69">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-<div class="container">
-
-  <!-- Background orbs -->
-  <div class="orb orb-blue"></div>
-  <div class="orb orb-amber"></div>
-
-  <!-- Conteúdo -->
-  <div class="content">
-
-    <div class="logo">
-        <img src="acoy-logo.svg" alt="Acoy" class="logo-img" />
-      <div class="line"></div>
+<header class="topo" id="topo">
+  <div class="wrap topo__in">
+    <a href="#inicio" class="topo__logo" aria-label="Acoy, voltar ao início">
+      <img src="assets/logo-acoy-branco.png" alt="Acoy" width="112" height="30">
+    </a>
+    <nav class="topo__nav" aria-label="Principal">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#como-comecar">Como começar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="topo__acoes">
+      <button class="topo__menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
+        <span></span><span></span>
+      </button>
     </div>
-
-
-    <h2 class="title">Estamos evoluindo</h2>
-
-    <p class="subtitle">
-      Estamos preparando uma nova experiência para você. Em breve, uma nova fase da Acoy.
-    </p>
-
-
-
-    <div class="bottom-line"></div>
-
   </div>
+  <nav class="menu-movel" id="menu-movel" aria-label="Menu" hidden>
+    <a href="#quem-somos">Quem somos</a>
+    <a href="#plataforma">Plataforma</a>
+    <a href="#como-comecar">Como começar</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <!-- partículas -->
-  <div id="particles"></div>
+<main>
 
-</div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__faixas" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap hero__in">
+      <div class="hero__texto">
+        <p class="selo">Plataforma digital de seguro garantia</p>
+        <h1>A apólice que levava dias agora sai em até 2 minutos.</h1>
+        <p class="hero__sub">A Acoy reúne mais de 25 seguradoras numa plataforma só. Sua empresa cota, emite e acompanha o seguro garantia no mesmo lugar, e a planilha de controle pode finalmente ser aposentada.</p>
+        <div class="hero__ctas">
+          <a href="#contato" class="btn btn--claro">Solicitar demonstração</a>
+        </div>
+      </div>
 
-<script src="script.js"></script>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="mock">
+          <div class="mock__barra"><span></span><span></span><span></span><em>Nova cotação · Garantia judicial</em></div>
+          <div class="mock__corpo">
+            <div class="mock__linha mock__linha--cab"><span>Seguradora</span><span>Taxa</span><span>Prazo</span></div>
+            <div class="mock__linha"><span><b class="ponto"></b>Seguradora A</span><span>0,92%</span><span>Imediato</span></div>
+            <div class="mock__linha mock__linha--sel"><span><b class="ponto"></b>Seguradora B</span><span>0,85%</span><span>Imediato</span></div>
+            <div class="mock__linha"><span><b class="ponto"></b>Seguradora C</span><span>1,04%</span><span>24 h</span></div>
+            <div class="mock__ok">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Apólice emitida em 1 min 42 s
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section class="numeros" aria-label="A Acoy em números">
+    <div class="wrap numeros__grade">
+      <div class="num"><strong>+4 mil</strong><span>apólices emitidas por mês</span></div>
+      <div class="num"><strong>+700</strong><span>empresas usam a plataforma</span></div>
+      <div class="num"><strong>+3 mil</strong><span>usuários ativos</span></div>
+      <div class="num"><strong>+160 mil</strong><span>processos judiciais cadastrados</span></div>
+      <div class="num"><strong>+25</strong><span>seguradoras conectadas</span></div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section class="secao" id="quem-somos">
+    <div class="wrap duas">
+      <div>
+        <p class="rotulo">Quem somos</p>
+        <h2>Tecnologia feita para o seguro garantia</h2>
+      </div>
+      <div class="texto-corrido">
+        <p>A Acoy nasceu de um incômodo bem conhecido de quem trabalha no jurídico ou no financeiro: contratar uma garantia judicial ou contratual era lento. Pedido por e-mail, cotação seguradora por seguradora e uma resposta que podia levar de dois a cinco dias.</p>
+        <p>Para resolver isso, criamos uma plataforma própria que coloca seguradoras, corretores e empresas no mesmo ambiente. Cotação, emissão, endossos e acompanhamento das apólices acontecem ali. E quando a dúvida não cabe num botão, tem uma equipe que conhece o produto do outro lado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES / DEPOIS -->
+  <section class="secao secao--clara" id="dia-a-dia">
+    <div class="wrap">
+      <p class="rotulo">O que muda no dia a dia</p>
+      <h2 class="h2-largo">Da troca de e-mails para um processo que todo mundo enxerga</h2>
+      <div class="comparativo">
+        <div class="comp comp--antes">
+          <h3>Sem a Acoy</h3>
+          <ul>
+            <li>Informações espalhadas em e-mails</li>
+            <li>Emissão que leva dias</li>
+            <li>Apólices controladas em planilha</li>
+            <li>Renovações, até as compulsórias, descobertas em cima da hora</li>
+            <li>Cancelamentos sem acompanhamento</li>
+            <li>Um contato diferente para cada seguradora</li>
+          </ul>
+        </div>
+        <div class="comp comp--depois">
+          <h3>Com a Acoy</h3>
+          <ul>
+            <li>Tudo centralizado na plataforma</li>
+            <li>Emissão em minutos</li>
+            <li>Controle das apólices dentro do sistema</li>
+            <li>Previsão de todas as renovações, inclusive as compulsórias</li>
+            <li>Cancelamentos registrados e acompanhados</li>
+            <li>Todas as seguradoras num lugar só</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMA -->
+  <section class="secao" id="plataforma">
+    <div class="wrap">
+      <p class="rotulo">A plataforma</p>
+      <h2 class="h2-largo">Tudo o que envolve o seguro garantia, numa ferramenta só</h2>
+      <div class="recursos">
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+          <h3>Multisseguradora</h3>
+          <p>Compare propostas de mais de 25 seguradoras lado a lado. Escolha pela taxa, pelo prazo ou pela seguradora que a sua política interna pede.</p>
+        </article>
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M12 9.5V13l2.5 1.5M10 3h4"/></svg></div>
+          <h3>Emissão online</h3>
+          <p>Cotação aprovada, apólice emitida. Nas seguradoras integradas por API, o processo todo leva até 2 minutos.</p>
+        </article>
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div>
+          <h3>Gestão do legado</h3>
+          <p>As apólices que sua empresa já tem, contratadas em qualquer seguradora, entram no mesmo painel. Assim o controle fica completo desde o primeiro dia.</p>
+        </article>
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Alçadas e trilha de auditoria</h3>
+          <p>Os perfis de acesso seguem o nível de alçada e a política da empresa. Cada aprovação fica registrada, com evidência, para quem precisar conferir depois.</p>
+        </article>
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="6" r="3"/><circle cx="17" cy="18" r="3"/><path d="M9.6 10.6l4.8-3.2M9.6 13.4l4.8 3.2"/></svg></div>
+          <h3>Integração com seus sistemas</h3>
+          <p>A plataforma pode ser integrada aos sistemas que sua empresa já usa, para que os dados da garantia não precisem ser digitados duas vezes.</p>
+        </article>
+        <article class="rec">
+          <div class="rec__ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c.8-3.2 3.2-5 6-5s5.2 1.8 6 5M15 14.5c2.6-.4 4.9 1.1 6 4.5"/></svg></div>
+          <h3>Áreas trabalhando juntas</h3>
+          <p>Financeiro, suprimentos, jurídico interno e advogados externos usam o mesmo sistema. Cada um vê o que precisa, e ninguém fica esperando resposta por e-mail.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES -->
+  <!-- TODO: confirmar autorização para citar estes clientes (e, se possível, usar os logos oficiais) -->
+  <section class="clientes" aria-labelledby="clientes-tit">
+    <div class="wrap">
+      <h2 id="clientes-tit" class="clientes__tit">Empresas como estas já emitem suas garantias pela Acoy</h2>
+      <ul class="clientes__lista">
+        <li>CSN</li>
+        <li>Stone</li>
+        <li>JBS</li>
+        <li>Sabesp</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMO COMEÇAR -->
+  <section class="secao secao--escura" id="como-comecar">
+    <div class="hero__faixas hero__faixas--canto" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap">
+      <p class="rotulo rotulo--claro">Como começar</p>
+      <h2 class="h2-largo">Começar é simples</h2>
+      <div class="comecar">
+        <ol class="passos">
+          <li>
+            <span class="passo__n">1</span>
+            <div>
+              <h3>Solicite uma demonstração</h3>
+              <p>Preencha o <a href="#contato">formulário de contato</a> e marcamos uma apresentação da plataforma com exemplos do dia a dia da sua empresa.</p>
+            </div>
+          </li>
+          <li>
+            <span class="passo__n">2</span>
+            <div>
+              <h3>Implantação rápida</h3>
+              <p>Assinado o contrato, configuramos os acessos e as alçadas e trazemos as apólices que sua empresa já tem. Em poucos dias a plataforma está pronta para uso.</p>
+            </div>
+          </li>
+          <li>
+            <span class="passo__n">3</span>
+            <div>
+              <h3>Treinamento da equipe</h3>
+              <p>Quem vai usar a plataforma recebe treinamento. Depois disso, a próxima garantia já sai por ela.</p>
+            </div>
+          </li>
+        </ol>
+        <ul class="condicoes">
+          <li><strong>Zero</strong> de custo de implantação</li>
+          <li><strong>Zero</strong> de mensalidade de manutenção</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="secao" id="contato">
+    <div class="wrap duas duas--contato">
+      <div>
+        <p class="rotulo">Contato</p>
+        <h2>Vamos conversar?</h2>
+        <p class="texto-corrido">Conte o que sua empresa precisa garantir e quantas apólices costuma ter por ano. Respondemos em dias úteis, das 8h às 18h.</p>
+        <div class="contatos">
+          <div class="contato">
+            <strong>E-mail</strong>
+            <a href="mailto:contato@acoy.com.br">contato@acoy.com.br</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Envia para /api/contato (Azure Function), que manda o e-mail para contato@acoy.com.br -->
+      <form class="form" id="form-contato" action="/api/contato" method="post" novalidate>
+        <div class="campo campo--isca" aria-hidden="true">
+          <label for="f-site">Não preencha este campo</label>
+          <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="campo">
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" maxlength="120" required>
+        </div>
+        <div class="campo">
+          <label for="f-empresa">Empresa</label>
+          <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="160" required>
+        </div>
+        <div class="campo-duplo">
+          <div class="campo">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" maxlength="160" required>
+          </div>
+          <div class="campo">
+            <label for="f-tel">Telefone</label>
+            <input id="f-tel" name="telefone" type="tel" autocomplete="tel" maxlength="40">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="f-msg">Como podemos ajudar?</label>
+          <textarea id="f-msg" name="mensagem" rows="4" maxlength="3000"></textarea>
+        </div>
+        <button type="submit" class="btn btn--azul">Enviar mensagem</button>
+        <p class="form__aviso" id="form-aviso" role="status"></p>
+        <p class="form__lgpd">Usamos seus dados só para responder a este contato.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap rodape__in">
+    <div class="rodape__marca">
+      <img src="assets/logo-acoy-branco.png" alt="Acoy" width="104" height="28">
+      <p>Seguro garantia sem burocracia.</p>
+    </div>
+    <div class="rodape__legal">
+      <p>São Paulo, SP<br>
+      <a href="mailto:contato@acoy.com.br">contato@acoy.com.br</a></p>
+    </div>
+  </div>
+  <div class="wrap rodape__base">
+    <span>© <span id="ano">2026</span> Acoy. Todos os direitos reservados.</span>
+    <a href="#inicio">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
 </body>
 </html>
